@@ -1,4 +1,7 @@
 import uuid
+
+from flask import session
+
 from src.common.database import Database
 
 
@@ -27,14 +30,31 @@ class User(object):
             return  user.password == password
         return  False
 
-    def register(self):
-        pass
+    @classmethod
+    def register(cls, email, password):
+        user = cls.get_by_email(email)
+        if user is None:
+            new_user = cls(email,password)
+            new_user.save_to_mongo()
+            session['email'] = email
+            return True
+        else:
+            return  False
 
-    def login(self):
-        pass
+    @staticmethod
+    def login(user_email):
+        session['email'] = user_email
+
+    @staticmethod
+    def logout():
+        session['email'] = None
 
     def json(self):
-        pass
+        return {
+            "email": self.email,
+            "_id" : self._id,
+            "password": self.password
+        }
 
     def save_to_mongo(self):
-        pass
+      Database.insert("users". self.json)
