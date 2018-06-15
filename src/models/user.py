@@ -13,13 +13,13 @@ class User(object):
 
     @classmethod
     def get_by_email(cls, email):
-        data = Database.find_one("students", {"email": email})
+        data = Database.find_one("users", {"email": email})
         if data is not None:
             return cls(**data)
 
     @classmethod
     def get_by_id(cls, _id):
-        data = Database.find_one("students", {"_id": _id})
+        data = Database.find_one("users", {"_id": _id})
         if data is not None:
             return  cls(**data)
 
@@ -59,4 +59,5 @@ class User(object):
         }
 
     def save_to_mongo(self):
-      Database.insert("students". self.json)
+      print(self.json())
+      Database.insert("users", self.json())
