@@ -13,3 +13,32 @@ function generateLabelSelectionBox(){
     return elementStr;
 
 }
+
+
+var loadProjectFile = function(data){
+    labellingData = nimn.parse(nimnSchema, data);
+}
+
+function readDataFile(e){
+    var input = e.srcElement;
+    if (input.files && input.files[0]) {
+        var dataFile = input.files[0];
+        
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          if(dataFile.name.endsWith(".jpg")){
+                loadProjectFile(e.target.result);
+            }else if(dataFile.name.endsWith(".png")){
+                loadFpp(e.target.result);
+            }else if(dataFile.name.endsWith(".xml")){
+                loadDlibXml(e.target.result);
+            }else{
+                console.log("Not supported");
+            }
+        };
+
+        reader.readAsText(input.files[0]);
+    }
+    input.value = null;
+}
+
