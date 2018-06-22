@@ -20,3 +20,14 @@ def get_img_model():
     return {
         'graph_def': graph_def
     }
+
+def imgProcessor(imgId):
+    return np.clip(img * 255, 0, 255).astype(np.uint8)
+
+net = get_vgg_model()
+
+g1 = tf.Graph()
+
+
+with tf.Session(graph=g1) as sess, g1.device('/cpu:0'):
+    tf.import_graph_def(net['graph_def'], name='vgg')
