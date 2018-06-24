@@ -50,7 +50,50 @@ for j in range(0,r,20):
 with tf.Session(graph=g1) as sess, g1.device('/cpu:0'):
     tf.import_graph_def(net['graph_def'], name='vgg')
 
+r = (testing_folder_len - (testing_folder_len%25))+1
+
+for j in range(0,r,25):
+
+    checkTestCodeExists = os.path.isdir(cfg.config['test-code'])
+
+    if (checkTestCodeExists == False):
+        os.mkdir(cfg.config['test-code'])
+        
+    file_Name = cfg.config['test-code']+"/"+str(j)
+
+    fileObject = open(file_Name,'wb')
+
+    pickle.dump(test_img,fileObject)
+
+    test_img = []
+    start_time = time.time()
+    x1 = g1.get_tensor_by_name('vgg/images' + ':0')
+
+    if j==r-1:
+        m = j+25-testing_folder_len
+
+    for i in range(j+0,j+25-m):
+
+        og = plt.imread(cfg.config['train-images']+str(i)+".png")
+        og = preprocess(og)
+
+
+
+
+    img_4d = np.array(test_img)
+
+
+    test_img = get_content_feature(img_4d).reshape((get_content_feature(img_4d).shape[0],7*7*512))
+
+    fileObject.close()
+
+
+
+
 def get_img_content_(img_4d):
+     if (checkTrainCodeExists == False):
+        os.mkdir(cfg.config['train-code'])
+        
     with tf.Session(graph=g1) as sess, g1.device('/gpu:0'):
 
 
@@ -68,15 +111,12 @@ def get_img_content_(img_4d):
     file_Name = cfg.config['train-code']+"/"+str(j)
     fileObject = open(file_Name,'wb')
 
-    if (checkTrainCodeExists == False):
-        os.mkdir(cfg.config['train-code'])
+   
     
     content_features = get_content_feature(img_4d).reshape((get_content_feature(img_4d).shape[0],7*7*512))
 
     checkTrainCodeExists = os.path.isdir(cfg.config['train-code'])
-
-    imgileObject.dump(content_features,fileObject)
-                                                                                                                                             
+                                                                                                                                  
     fileObject.close()                                
 
 
