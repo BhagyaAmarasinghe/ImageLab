@@ -29,6 +29,24 @@ net = get_vgg_model()
 g1 = tf.Graph()
 
 
+for j in range(0,r,20):
+
+    for i in range(j+0,j+20-m):
+
+        og = plt.imread(cfg.config['train-images']+str(i)+".png")
+        og = preprocess(og)
+        img.append(og)
+
+    img=[]
+    start_time = time.time()
+    if j==r-1:
+        g1 = j+batch-training_folder_len
+
+
+    x1 = g1.get_tensor_by_name('vgg/images' + ':0')
+
+    img_4d = np.array(img)
+
 with tf.Session(graph=g1) as sess, g1.device('/cpu:0'):
     tf.import_graph_def(net['graph_def'], name='vgg')
 
@@ -41,6 +59,11 @@ def get_img_content_(img_4d):
                     session=sess,
                     feed_dict={x1: img_4d
                     })
-                    
+
             print (content_features.shape)
             return content_features
+
+r = (training_folder_len - (training_folder_len%batch))+1
+print (r)
+
+
