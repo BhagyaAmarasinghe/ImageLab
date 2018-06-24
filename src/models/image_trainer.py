@@ -31,3 +31,16 @@ g1 = tf.Graph()
 
 with tf.Session(graph=g1) as sess, g1.device('/cpu:0'):
     tf.import_graph_def(net['graph_def'], name='vgg')
+
+def get_img_content_(img_4d):
+    with tf.Session(graph=g1) as sess, g1.device('/gpu:0'):
+
+
+            content_layer = 'imgLayer'
+            content_features= g1.get_tensor_by_name(content_layer).eval(
+                    session=sess,
+                    feed_dict={x1: img_4d
+                    })
+                    
+            print (content_features.shape)
+            return content_features
