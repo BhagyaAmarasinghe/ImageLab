@@ -63,7 +63,20 @@ def get_img_content_(img_4d):
             print (content_features.shape)
             return content_features
 
-r = (training_folder_len - (training_folder_len%batch))+1
-print (r)
+    r = (training_folder_len - (training_folder_len%batch))+1
+
+    file_Name = cfg.config['train-code']+"/"+str(j)
+    fileObject = open(file_Name,'wb')
+
+    if (checkTrainCodeExists == False):
+        os.mkdir(cfg.config['train-code'])
+    
+    content_features = get_content_feature(img_4d).reshape((get_content_feature(img_4d).shape[0],7*7*512))
+
+    checkTrainCodeExists = os.path.isdir(cfg.config['train-code'])
+
+    imgileObject.dump(content_features,fileObject)
+                                                                                                                                             
+    fileObject.close()                                
 
 
