@@ -1,12 +1,12 @@
 *{
-    
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html{
-    
+
     background-color: #fff;
     color: #555;
     font-family:'Lato', 'Arial' ,'san-serif';
@@ -16,7 +16,7 @@ html{
 }
 
 .row{
-    
+
     max-width: 1140px;
     margin: 0 auto;
     text-rendering: optimizeLegibility;
@@ -33,7 +33,7 @@ html{
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
+  max-width: 800px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
@@ -121,7 +121,284 @@ body {
   background: linear-gradient(to left, #76b852, #8DC26F);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  -moz-osx-font-smoothing: grayscale;
+
+    font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	background-color:#CCC;
+
 }
 
+
+
+/*-----------------------------------*/
+/* User Manager */
+/*-----------------------------------*/
+.user-list {
+    float: left;
+    list-style: none;
+    align-content: center;
+}
+
+.user-list li {
+
+    display: inline-block;
+    margin-left: 40px;
+}
+
+
+.section-usercreation {
+ margin-bottom: 10px;
+ align-content: center;
+ position: relative;
+  z-index: 1;
+  background: #a8a8a8;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+}
+
+
+
+.user-form {
+    align-content: center ;
+    border: 1px solid black;
+    width: 700;
+    height: 300;
+    overflow: scroll;
+    margin-bottom: 10px;
+}
+
+
+/*------ BUTTONS -------*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+
+
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+
+}
+
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+
+    border: 1px solid #e67e22; /* border of button ghost */
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #cf6d17;
+
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+
+    border: 1px solid #cf6d17; /* border of button ghost */
+    color: #fff;
+}
+.btn-floating {
+    float: right
+}
+
+
+
+
+
+.user_heading_list {
+
+}
+
+.user_headinglist {
+     float: left;
+    list-style: none;
+    align-content: center;
+}
+
+/*------ float button -------*/
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+
+
+/*-----------------------------------*/
+/* Project Manager */
+/*-----------------------------------*/
+.project-list {
+    float: left;
+    list-style: none;
+    align-content: center;
+}
+
+.project-list li {
+
+    display: inline-block;
+    margin-left: 40px;
+}
+
+
+.section-projectcreation {
+ margin-bottom: 10px;
+ align-content: center;
+ position: relative;
+  z-index: 1;
+  background: #a8a8a8;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+
+
+.uers-form {
+    align-content: center ;
+    border: 1px solid black;
+    width: 700;
+    height: 300;
+    overflow: scroll;
+    margin-bottom: 10px;
+}
+
+
+/*------ BUTTONS -------*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+
+
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+
+}
+
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+
+    border: 1px solid #e67e22; /* border of button ghost */
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #cf6d17;
+
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+
+    border: 1px solid #cf6d17; /* border of button ghost */
+    color: #fff;
+}
+.btn-floating {
+    float: right
+}
+
+
+
+
+
+.user_heading_list {
+
+}
+
+.user_headinglist {
+     float: left;
+    list-style: none;
+    align-content: center;
+}
+/*------ float button -------*/
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
 

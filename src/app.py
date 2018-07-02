@@ -45,5 +45,13 @@ def register_user():
 
     return render_template("profile.html", email=session['email'])
 
+@app.route('/user_manager')
+def user_manager_template():
+    return render_template('user_manager.html')
+
+@app.route('/project_manager')
+def project_manager_template():
+    return render_template('project_manager.html')
+
 if __name__ == '__main__':
     app.run(port=4995, debug=True)
