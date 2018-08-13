@@ -21,3 +21,8 @@ function readPointsFile(input) {
     }
     input.value = null;
 }
+
+function download(data, filename, type) {
+    var blobData = new Blob([data], {type: type + ";charset=utf-8"})
+    saveAs(blobData, filename);
+}
