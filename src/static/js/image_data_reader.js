@@ -41,3 +41,16 @@ function readImageFile(f){
         reader.readAsDataURL(f);
     }
 }
+
+function readImageFiles(input) {
+    if (input.files && input.files[0]) {
+        emptySlider();
+        hideWidgets();
+        emptyCanvas();
+        images = {};//remove previous data
+        imagesData = {};
+        for(i=0;i<input.files.length;i++){
+            readImageFile(input.files[i]);
+        }
+    }
+}
