@@ -26,3 +26,18 @@ function download(data, filename, type) {
     var blobData = new Blob([data], {type: type + ";charset=utf-8"})
     saveAs(blobData, filename);
 }
+
+function readImageFile(f){
+    if(f.type.startsWith("image")){
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var imgData = {
+                name : f.name,
+                data: e.target.result
+            };
+            imagesData[f.name] = imgData
+            addToSlider(imgData);
+        }
+        reader.readAsDataURL(f);
+    }
+}
