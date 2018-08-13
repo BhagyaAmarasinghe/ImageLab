@@ -40,6 +40,20 @@ function updateLabelBox(box_el){
     }
 }
 
+function getNextPointsCounter(imgName,boxLabel){
+    if(images[imgName].boxes && images[imgName].boxes[boxLabel].points){
+        return images[imgName].boxes[boxLabel].points.length;
+    }else{
+        if(!images[imgName].boxes) {
+            images[imgName].boxes = [];
+            images[imgName].boxes[boxLabel] = { points : {}};
+        }else if(!images[imgName].boxes[boxLabel]) {
+            images[imgName].boxes[boxLabel] = { points : {}};
+        }
+        return 0;
+    }
+}
+
 function updateFeaturePoint(point_el){
     var imgName = $('#img').attr("label");
     var boxlbl = $(point_el).parent().attr("label");

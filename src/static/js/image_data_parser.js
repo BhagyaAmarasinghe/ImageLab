@@ -15,7 +15,7 @@ function fetch(){
 	}else if(!images[imgName].boxes){
 		images[imgName].boxes = {}
 	}
-	
+
    	var points = images[imgName].boxes[faceLable].points;
 		if(!points){
 			images[imgName].boxes[faceLable].points = {};
