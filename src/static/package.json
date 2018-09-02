@@ -1,0 +1,25 @@
+{
+  "name": "image_lab_package",
+  "version": "1.0.0",
+  "description": "This is the image lab package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshwithan/ImageLab.git"
+  },
+  "keywords": [
+    "python",
+    "flask",
+    "react",
+    "npm"
+  ],
+  "author": "keshwithan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keshwithan/ImageLab/issues"
+  },
+  "homepage": "https://github.com/keshwithan/ImageLab#readme"
+}
