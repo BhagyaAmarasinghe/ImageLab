@@ -1,5 +1,5 @@
 # ImageLab
-Machine learning supported web-base image labelling tool for researcher. 
+Machine learning supported web-base image labelling tool for researchers. 
 It is a family of frequently updated, easy to use, and powerful software packages for acquisition and analysis of gel and blot images. 
 
 Installation Guide: 
